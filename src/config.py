@@ -1,17 +1,26 @@
 import os
 
-# Paths
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data")
-RAW_VIDEO_DIR = os.path.join(DATA_DIR, "raw")
-PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
-OUTPUT_DIR = os.path.join(DATA_DIR, "output")
-MODEL_DIR = os.path.join(DATA_DIR, "models")
+MODEL_PATHS = {
+    'volleyball': 'data/models/volleyball_yolov8.pt',
+    'players': 'data/models/players_yolov8.pt', 
+    'actions': 'data/models/actions_yolov8.pt',
+    'court': 'data/models/court_yolov8_seg.pt'
+}
 
-# Model settings
-YOLO_MODEL_PATH = os.path.join(MODEL_DIR, "yolo.pt")  # Replace with actual
-CONF_THRESHOLD = 0.25
+ROBOFLOW_CONFIG = {
+    'api_key': 'g7xKIGOSwZGBz8SlVM3G',
+    'workspace': 'shukur-sabzaliev-bh7pq',
+    'projects': {
+        'volleyball': 'volleyball-tracking',
+        'players': 'players-dataset', 
+        'actions': 'volleyball-actions',
+        'court': 'court-segmented'
+    }
+}
 
-# Court dimensions (in meters)
-COURT_WIDTH = 9
-COURT_LENGTH = 18
+BYTETRACK_CONFIG = {
+    'track_thresh': 0.5,
+    'track_buffer': 30,
+    'match_thresh': 0.8,
+    'frame_rate': 30
+}
