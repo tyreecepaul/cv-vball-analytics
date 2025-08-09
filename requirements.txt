@@ -1,0 +1,23 @@
+# Core
+opencv-python
+numpy
+pandas
+matplotlib
+plotly
+
+# Machine Learning
+torch
+ultralytics
+scikit-learn
+
+# Tracking
+lap
+filterpy
+norfair
+
+# Web
+flask
+jinja2
+
+# Optional
+easyocr
