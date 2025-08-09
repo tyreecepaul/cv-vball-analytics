@@ -31,16 +31,18 @@ class VolleyVisionService:
     Comprehensive volleyball analysis service combining VolleyVision models with ByteTrack
     """
     
-    def __init__(self, model_paths: Dict[str, str], use_roboflow: bool = True):
+    def __init__(self, model_paths: Dict[str, str], use_roboflow: bool = True, tracker_type: str = "bytetrack"):
         """
         Initialize the volleyball analysis service
         
         Args:
             model_paths: Dictionary with paths to different models
             use_roboflow: Whether to use RoboFlow models (more accurate) or local models (faster)
+            tracker_type: Type of tracker to use ("bytetrack", "botsort", "ultralytics")
         """
         self.model_paths = model_paths
         self.use_roboflow = use_roboflow
+        self.tracker_type = tracker_type
         
         # Initialize models
         self.volleyball_detector = self._load_volleyball_model()
@@ -48,8 +50,9 @@ class VolleyVisionService:
         self.action_detector = self._load_action_model()
         self.court_detector = self._load_court_model()
         
-        # ByteTrack tracker initialization
-        self.tracker = self._init_bytetrack()
+        # Initialize tracker
+        self.tracker = self._init_tracker()
+        self.track_history = {}  # For storing track histories
         
         # Class mappings
         self.action_classes = {
@@ -108,10 +111,27 @@ class VolleyVisionService:
         
         return RoboFlowModel(model_name)
     
+    def _init_tracker(self):
+        """Initialize tracker based on specified type"""
+        if self.tracker_type == "ultralytics":
+            # Use YOLOv8's built-in tracking (includes ByteTrack and BoTSORT)
+            return "ultralytics_builtin"
+        else:
+            # Try to initialize standalone ByteTracker
+            return self._init_bytetrack()
     def _init_bytetrack(self):
         """Initialize ByteTrack tracker"""
         try:
-            from yolox.tracker.byte_tracker import BYTETracker
+            # Try different import paths for ByteTracker
+            try:
+                from ByteTrack.yolox.tracker.byte_tracker import BYTETracker
+            except ImportError:
+                try:
+                    from ByteTrack.yolox.tracker.byte_tracker import BYTETracker
+                except ImportError:
+                    # Use Ultralytics built-in ByteTracker (available in newer versions)
+                    from ultralytics.trackers.byte_tracker import BYTETracker
+            
             from types import SimpleNamespace
             
             # ByteTrack configuration
@@ -123,8 +143,34 @@ class VolleyVisionService:
             
             return BYTETracker(frame_rate=30, args=args)
         except ImportError:
-            print("ByteTrack not installed. Using basic tracking.")
-            return None
+            print("ByteTracker not found. Falling back to Ultralytics built-in tracking.")
+            return "ultralytics_builtin"
+    
+    def detect_players_with_tracking(self, frame: np.ndarray) -> List[Detection]:
+        """Detect and track players using YOLOv8's built-in tracking"""
+        if isinstance(self.player_detector, YOLO):
+            # Use YOLOv8's track method which includes ByteTrack
+            tracker_config = "bytetrack.yaml" if self.tracker_type == "bytetrack" else "botsort.yaml"
+            results = self.player_detector.track(frame, tracker=tracker_config, persist=True)
+            
+            detections = []
+            for result in results:
+                boxes = result.boxes
+                if boxes is not None:
+                    for box in boxes:
+                        x1, y1, x2, y2 = box.xyxy[0].cpu().numpy()
+                        conf = box.conf[0].cpu().numpy()
+                        track_id = box.id[0].cpu().numpy() if box.id is not None else None
+                        
+                        detections.append(Detection(
+                            bbox=(int(x1), int(y1), int(x2), int(y2)),
+                            confidence=float(conf),
+                            class_id=1,
+                            track_id=int(track_id) if track_id is not None else None
+                        ))
+            return detections
+        else:
+            return []
     
     def _create_court_template(self) -> np.ndarray:
         """Create a volleyball court template for visualization"""
@@ -229,10 +275,12 @@ class VolleyVisionService:
         return None
     
     def update_tracker(self, detections: List[Detection], frame_id: int) -> List[Detection]:
-        """Update ByteTracker with new detections"""
-        if self.tracker is None:
+        """Update tracker with new detections"""
+        if self.tracker == "ultralytics_builtin" or self.tracker is None:
+            # Tracking is handled in detect_players_with_tracking method
             return detections
         
+        # Use standalone ByteTracker
         # Convert detections to ByteTrack format
         det_array = np.array([[d.bbox[0], d.bbox[1], d.bbox[2], d.bbox[3], d.confidence] 
                              for d in detections])
@@ -296,11 +344,15 @@ class VolleyVisionService:
         volleyball_detections = self.detect_volleyball(frame)
         frame_data['volleyball'] = volleyball_detections
         
-        # Detect players
-        player_detections = self.detect_players(frame)
+        # Detect players with tracking
+        if self.tracker == "ultralytics_builtin" or isinstance(self.tracker, str):
+            # Use YOLOv8's built-in tracking
+            tracked_players = self.detect_players_with_tracking(frame)
+        else:
+            # Use standalone ByteTracker
+            player_detections = self.detect_players(frame)
+            tracked_players = self.update_tracker(player_detections, frame_id)
         
-        # Update tracker with player detections
-        tracked_players = self.update_tracker(player_detections, frame_id)
         frame_data['players'] = tracked_players
         
         # Detect actions for tracked players
@@ -469,8 +521,15 @@ def main():
         'court': 'court_yolov8_seg.pt'         # Path to court segmentation model
     }
     
-    # Initialize service
-    service = VolleyVisionService(model_paths, use_roboflow=False)
+    # Initialize service with different tracker options:
+    # Option 1: Use YOLOv8's built-in ByteTrack (Recommended)
+    service = VolleyVisionService(model_paths, use_roboflow=False, tracker_type="ultralytics")
+    
+    # Option 2: Use YOLOv8's built-in BoTSORT
+    # service = VolleyVisionService(model_paths, use_roboflow=False, tracker_type="botsort")
+    
+    # Option 3: Try standalone ByteTracker (may require additional setup)
+    # service = VolleyVisionService(model_paths, use_roboflow=False, tracker_type="bytetrack")
     
     # Process video
     video_path = "volleyball_match.mp4"  # Replace with your video path
