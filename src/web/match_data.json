@@ -1,0 +1,482 @@
+{
+  "frame_1": {
+    "player_positions": {
+      "player1": [75, 75],
+      "player2": [225, 75],
+      "player3": [75, 150],
+      "player4": [225, 150],
+      "player5": [75, 225],
+      "player6": [225, 225],
+      "player7": [375, 75],
+      "player8": [525, 75],
+      "player9": [375, 150],
+      "player10": [525, 150],
+      "player11": [375, 225],
+      "player12": [525, 225]
+    }
+  },
+  "frame_2": {
+    "player_positions": {
+      "player1": [80, 80],
+      "player2": [220, 80],
+      "player3": [80, 155],
+      "player4": [220, 155],
+      "player5": [80, 220],
+      "player6": [220, 220],
+      "player7": [380, 80],
+      "player8": [520, 80],
+      "player9": [380, 155],
+      "player10": [520, 155],
+      "player11": [380, 220],
+      "player12": [520, 220]
+    }
+  },
+  "frame_3": {
+    "player_positions": {
+      "player1": [85, 90],
+      "player2": [215, 90],
+      "player3": [85, 160],
+      "player4": [215, 160],
+      "player5": [85, 210],
+      "player6": [215, 210],
+      "player7": [385, 90],
+      "player8": [515, 90],
+      "player9": [385, 160],
+      "player10": [515, 160],
+      "player11": [385, 210],
+      "player12": [515, 210]
+    }
+  },
+  "frame_4": {
+    "player_positions": {
+      "player1": [90, 100],
+      "player2": [210, 100],
+      "player3": [90, 165],
+      "player4": [210, 165],
+      "player5": [90, 200],
+      "player6": [210, 200],
+      "player7": [390, 100],
+      "player8": [510, 100],
+      "player9": [390, 165],
+      "player10": [510, 165],
+      "player11": [390, 200],
+      "player12": [510, 200]
+    }
+  },
+  "frame_5": {
+    "player_positions": {
+      "player1": [100, 110],
+      "player2": [200, 110],
+      "player3": [100, 170],
+      "player4": [200, 170],
+      "player5": [100, 190],
+      "player6": [200, 190],
+      "player7": [400, 110],
+      "player8": [500, 110],
+      "player9": [400, 170],
+      "player10": [500, 170],
+      "player11": [400, 190],
+      "player12": [500, 190]
+    }
+  },
+  "frame_6": {
+    "player_positions": {
+      "player1": [110, 120],
+      "player2": [190, 120],
+      "player3": [110, 175],
+      "player4": [190, 175],
+      "player5": [110, 185],
+      "player6": [190, 185],
+      "player7": [410, 120],
+      "player8": [490, 120],
+      "player9": [410, 175],
+      "player10": [490, 175],
+      "player11": [410, 185],
+      "player12": [490, 185]
+    }
+  },
+  "frame_7": {
+    "player_positions": {
+      "player1": [120, 130],
+      "player2": [180, 130],
+      "player3": [120, 180],
+      "player4": [180, 180],
+      "player5": [120, 180],
+      "player6": [180, 180],
+      "player7": [420, 130],
+      "player8": [480, 130],
+      "player9": [420, 180],
+      "player10": [480, 180],
+      "player11": [420, 180],
+      "player12": [480, 180]
+    }
+  },
+  "frame_8": {
+    "player_positions": {
+      "player1": [130, 140],
+      "player2": [170, 140],
+      "player3": [130, 185],
+      "player4": [170, 185],
+      "player5": [130, 175],
+      "player6": [170, 175],
+      "player7": [430, 140],
+      "player8": [470, 140],
+      "player9": [430, 185],
+      "player10": [470, 185],
+      "player11": [430, 175],
+      "player12": [470, 175]
+    }
+  },
+  "frame_9": {
+    "player_positions": {
+      "player1": [140, 150],
+      "player2": [160, 150],
+      "player3": [140, 190],
+      "player4": [160, 190],
+      "player5": [140, 170],
+      "player6": [160, 170],
+      "player7": [440, 150],
+      "player8": [460, 150],
+      "player9": [440, 190],
+      "player10": [460, 190],
+      "player11": [440, 170],
+      "player12": [460, 170]
+    }
+  },
+  "frame_10": {
+    "player_positions": {
+      "player1": [145, 155],
+      "player2": [155, 155],
+      "player3": [145, 195],
+      "player4": [155, 195],
+      "player5": [145, 175],
+      "player6": [155, 175],
+      "player7": [445, 155],
+      "player8": [455, 155],
+      "player9": [445, 195],
+      "player10": [455, 195],
+      "player11": [445, 175],
+      "player12": [455, 175]
+    }
+  },
+  "frame_11": {
+    "player_positions": {
+      "player1": [150, 160],
+      "player2": [150, 160],
+      "player3": [150, 200],
+      "player4": [150, 200],
+      "player5": [150, 180],
+      "player6": [150, 180],
+      "player7": [450, 160],
+      "player8": [450, 160],
+      "player9": [450, 200],
+      "player10": [450, 200],
+      "player11": [450, 180],
+      "player12": [450, 180]
+    }
+  },
+  "frame_12": {
+    "player_positions": {
+      "player1": [145, 155],
+      "player2": [155, 155],
+      "player3": [145, 205],
+      "player4": [155, 205],
+      "player5": [145, 175],
+      "player6": [155, 175],
+      "player7": [445, 155],
+      "player8": [455, 155],
+      "player9": [445, 205],
+      "player10": [455, 205],
+      "player11": [445, 175],
+      "player12": [455, 175]
+    }
+  },
+  "frame_13": {
+    "player_positions": {
+      "player1": [140, 150],
+      "player2": [160, 150],
+      "player3": [140, 210],
+      "player4": [160, 210],
+      "player5": [140, 170],
+      "player6": [160, 170],
+      "player7": [440, 150],
+      "player8": [460, 150],
+      "player9": [440, 210],
+      "player10": [460, 210],
+      "player11": [440, 170],
+      "player12": [460, 170]
+    }
+  },
+  "frame_14": {
+    "player_positions": {
+      "player1": [135, 145],
+      "player2": [165, 145],
+      "player3": [135, 215],
+      "player4": [165, 215],
+      "player5": [135, 165],
+      "player6": [165, 165],
+      "player7": [435, 145],
+      "player8": [465, 145],
+      "player9": [435, 215],
+      "player10": [465, 215],
+      "player11": [435, 165],
+      "player12": [465, 165]
+    }
+  },
+  "frame_15": {
+    "player_positions": {
+      "player1": [130, 140],
+      "player2": [170, 140],
+      "player3": [130, 220],
+      "player4": [170, 220],
+      "player5": [130, 160],
+      "player6": [170, 160],
+      "player7": [430, 140],
+      "player8": [470, 140],
+      "player9": [430, 220],
+      "player10": [470, 220],
+      "player11": [430, 160],
+      "player12": [470, 160]
+    }
+  },
+  "frame_16": {
+    "player_positions": {
+      "player1": [125, 135],
+      "player2": [175, 135],
+      "player3": [125, 225],
+      "player4": [175, 225],
+      "player5": [125, 155],
+      "player6": [175, 155],
+      "player7": [425, 135],
+      "player8": [475, 135],
+      "player9": [425, 225],
+      "player10": [475, 225],
+      "player11": [425, 155],
+      "player12": [475, 155]
+    }
+  },
+  "frame_17": {
+    "player_positions": {
+      "player1": [120, 130],
+      "player2": [180, 130],
+      "player3": [120, 230],
+      "player4": [180, 230],
+      "player5": [120, 150],
+      "player6": [180, 150],
+      "player7": [420, 130],
+      "player8": [480, 130],
+      "player9": [420, 230],
+      "player10": [480, 230],
+      "player11": [420, 150],
+      "player12": [480, 150]
+    }
+  },
+  "frame_18": {
+    "player_positions": {
+      "player1": [115, 125],
+      "player2": [185, 125],
+      "player3": [115, 235],
+      "player4": [185, 235],
+      "player5": [115, 145],
+      "player6": [185, 145],
+      "player7": [415, 125],
+      "player8": [485, 125],
+      "player9": [415, 235],
+      "player10": [485, 235],
+      "player11": [415, 145],
+      "player12": [485, 145]
+    }
+  },
+  "frame_19": {
+    "player_positions": {
+      "player1": [110, 120],
+      "player2": [190, 120],
+      "player3": [110, 240],
+      "player4": [190, 240],
+      "player5": [110, 140],
+      "player6": [190, 140],
+      "player7": [410, 120],
+      "player8": [490, 120],
+      "player9": [410, 240],
+      "player10": [490, 240],
+      "player11": [410, 140],
+      "player12": [490, 140]
+    }
+  },
+  "frame_20": {
+    "player_positions": {
+      "player1": [105, 115],
+      "player2": [195, 115],
+      "player3": [105, 245],
+      "player4": [195, 245],
+      "player5": [105, 135],
+      "player6": [195, 135],
+      "player7": [405, 115],
+      "player8": [495, 115],
+      "player9": [405, 245],
+      "player10": [495, 245],
+      "player11": [405, 135],
+      "player12": [495, 135]
+    }
+  },
+  "frame_21": {
+    "player_positions": {
+      "player1": [100, 110],
+      "player2": [200, 110],
+      "player3": [100, 250],
+      "player4": [200, 250],
+      "player5": [100, 130],
+      "player6": [200, 130],
+      "player7": [400, 110],
+      "player8": [500, 110],
+      "player9": [400, 250],
+      "player10": [500, 250],
+      "player11": [400, 130],
+      "player12": [500, 130]
+    }
+  },
+  "frame_22": {
+    "player_positions": {
+      "player1": [95, 105],
+      "player2": [205, 105],
+      "player3": [95, 255],
+      "player4": [205, 255],
+      "player5": [95, 125],
+      "player6": [205, 125],
+      "player7": [395, 105],
+      "player8": [505, 105],
+      "player9": [395, 255],
+      "player10": [505, 255],
+      "player11": [395, 125],
+      "player12": [505, 125]
+    }
+  },
+  "frame_23": {
+    "player_positions": {
+      "player1": [90, 100],
+      "player2": [210, 100],
+      "player3": [90, 260],
+      "player4": [210, 260],
+      "player5": [90, 120],
+      "player6": [210, 120],
+      "player7": [390, 100],
+      "player8": [510, 100],
+      "player9": [390, 260],
+      "player10": [510, 260],
+      "player11": [390, 120],
+      "player12": [510, 120]
+    }
+  },
+  "frame_24": {
+    "player_positions": {
+      "player1": [85, 95],
+      "player2": [215, 95],
+      "player3": [85, 265],
+      "player4": [215, 265],
+      "player5": [85, 115],
+      "player6": [215, 115],
+      "player7": [385, 95],
+      "player8": [515, 95],
+      "player9": [385, 265],
+      "player10": [515, 265],
+      "player11": [385, 115],
+      "player12": [515, 115]
+    }
+  },
+  "frame_25": {
+    "player_positions": {
+      "player1": [80, 90],
+      "player2": [220, 90],
+      "player3": [80, 270],
+      "player4": [220, 270],
+      "player5": [80, 110],
+      "player6": [220, 110],
+      "player7": [380, 90],
+      "player8": [520, 90],
+      "player9": [380, 270],
+      "player10": [520, 270],
+      "player11": [380, 110],
+      "player12": [520, 110]
+    }
+  },
+  "frame_26": {
+    "player_positions": {
+      "player1": [75, 85],
+      "player2": [225, 85],
+      "player3": [75, 275],
+      "player4": [225, 275],
+      "player5": [75, 105],
+      "player6": [225, 105],
+      "player7": [375, 85],
+      "player8": [525, 85],
+      "player9": [375, 275],
+      "player10": [525, 275],
+      "player11": [375, 105],
+      "player12": [525, 105]
+    }
+  },
+  "frame_27": {
+    "player_positions": {
+      "player1": [70, 80],
+      "player2": [230, 80],
+      "player3": [70, 280],
+      "player4": [230, 280],
+      "player5": [70, 100],
+      "player6": [230, 100],
+      "player7": [370, 80],
+      "player8": [530, 80],
+      "player9": [370, 280],
+      "player10": [530, 280],
+      "player11": [370, 100],
+      "player12": [530, 100]
+    }
+  },
+  "frame_28": {
+    "player_positions": {
+      "player1": [65, 75],
+      "player2": [235, 75],
+      "player3": [65, 285],
+      "player4": [235, 285],
+      "player5": [65, 95],
+      "player6": [235, 95],
+      "player7": [365, 75],
+      "player8": [535, 75],
+      "player9": [365, 285],
+      "player10": [535, 285],
+      "player11": [365, 95],
+      "player12": [535, 95]
+    }
+  },
+  "frame_29": {
+    "player_positions": {
+      "player1": [60, 70],
+      "player2": [240, 70],
+      "player3": [60, 290],
+      "player4": [240, 290],
+      "player5": [60, 90],
+      "player6": [240, 90],
+      "player7": [360, 70],
+      "player8": [540, 70],
+      "player9": [360, 290],
+      "player10": [540, 290],
+      "player11": [360, 90],
+      "player12": [540, 90]
+    }
+  },
+  "frame_30": {
+    "player_positions": {
+      "player1": [55, 65],
+      "player2": [245, 65],
+      "player3": [55, 295],
+      "player4": [245, 295],
+      "player5": [55, 85],
+      "player6": [245, 85],
+      "player7": [355, 65],
+      "player8": [545, 65],
+      "player9": [355, 295],
+      "player10": [545, 295],
+      "player11": [355, 85],
+      "player12": [545, 85]
+    }
+  }
+}
