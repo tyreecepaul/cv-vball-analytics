@@ -10,6 +10,7 @@
 
 # next.js
 /.next/
+site/.next
 /out/
 
 # production
@@ -27,7 +28,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-*.mp4
+.mp4
 
 # vercel
 .vercel
