@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+*.mp4
 
 # vercel
 .vercel
